@@ -1,0 +1,13 @@
+  // to detect loop in linked list//
+  bool detectLoop(Node* head)
+    {
+     struct Node *hair=head;
+     struct Node *tortoise = head;
+     while(hair!=NULL && hair->next!=NULL){
+         hair = hair->next->next;
+         tortoise=tortoise->next;
+         if(hair==tortoise){
+             return true;
+         }
+     }
+     return false;
